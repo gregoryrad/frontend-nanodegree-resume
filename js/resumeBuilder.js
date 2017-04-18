@@ -30,10 +30,10 @@ var education = {
     ],
     "onlineCourses": [
         {
-            "title": "Frontend Nanodegree",
+            "title": "Front-End Web Developer Nanodegree",
             "school": "Udacity",
-            "dates": "Mar. 2017 - Present",
-            "url": "Lynnwood, WA"
+            "dates": "2017",
+            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
         }
     ]
 };
@@ -131,27 +131,37 @@ if (bio.skills.length > 0) {
 
 /* ---------------- education display function ---------------- */
 education.schools.display = function () {
+/* ---------------- education function ---------------- */
     function showSchool() {
         education.schools.forEach(function(school) {
             console.log(school);
             // console.log(job.title);
             $("#education").append(HTMLschoolStart);
             var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
+            var formattedSchoolName = formattedSchoolName + formattedSchoolDegree;
             $(".education-entry:last").append(formattedSchoolName);
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
             $(".education-entry:last").append(formattedSchoolLocation);
             var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
             $(".education-entry:last").append(formattedSchoolDates);
             var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.major);
-            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
-            var formattedSchoolDegree = formattedSchoolMajor + formattedSchoolDegree;
-            $(".education-entry:last").append(formattedSchoolDegree);
-
+            $(".education-entry:last").append(formattedSchoolMajor);
         });
     }showSchool();
+    /* ---------------- onlineCourses function ---------------- */
     function showOnline() {
-        //code goes here
-    }
+        education.onlineCourses.forEach(function(online) {
+            console.log(online);
+            $(".education-entry:last").append(HTMLonlineClasses);
+            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.school);
+            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.title);
+            var formattedOnlineTitle = formattedOnlineTitle + formattedOnlineSchool;
+            $(".education-entry:last").append(formattedOnlineTitle);
+            var formattedOnlineURL = HTMLonlineURL.replace("%data%", online.url);
+            $(".education-entry:last").append(formattedOnlineURL);
+        });
+    }showOnline();
 };
 
 education.schools.display();
