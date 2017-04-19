@@ -11,7 +11,7 @@ var bio = {
     },
     "welcomeMessage": "Hi there. This is my welcome message. Aenean ac ullamcorper arcu. In sed fermentum purus. Ut aliquam tempor odio, non commodo turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat facilisis ultrices. Donec et diam lobortis, venenatis dui id, viverra urna. Aliquam sed magna diam. Maecenas sed nisi ac sapien condimentum dignissim eget nec leo. Nunc consectetur arcu vitae elit condimentum sollicitudin. Phasellus eu metus ex.",
     "skills": [
-        "PhotoShop", "Illustrator", "HTML", "CSS", "Responsive Design"
+        "PhotoShop", "Illustrator", "HTML", "CSS", "Responsive Design", "Sketch", "WordPress"
     ],
     "biopic": "images/GregoryR_profilePic.jpeg"
 };
@@ -37,6 +37,7 @@ var education = {
         }
     ]
 };
+
 
 /* ---------------- work object ---------------- */
 var work = {
@@ -65,6 +66,7 @@ var work = {
     ]
 };
 
+
 /* ---------------- projects object ---------------- */
 var projects = {
     "projects": [
@@ -72,118 +74,105 @@ var projects = {
             "title": "Suspendisse vitae",
             "dates": "2017",
             "description": "Pellentesque molestie pellentesque neque. Morbi cursus odio ante, eget suscipit metus auctor vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "image": [
+            "images": [
                 "images/fpo-1.jpg",
-                "images/fpo-1.jpg"
+                "images/fpo-2.jpg",
+                "images/fpo-6.png"
             ]
         },
         {
             "title": "Donec diam",
             "dates": "2016",
             "description": "Morbi in ipsum non velit ornare tristique. Maecenas vel lacus id turpis pharetra hendrerit. Maecenas ipsum erat, cursus a mollis a, rutrum sit amet lacus.",
-            "image": [
-                "images/fpo-2.jpg",
-                "images/fpo-1.jpg"
+            "images": [
+                "images/fpo-3.png",
+                "images/fpo-4.png",
+                "images/fpo-5.png"
             ]
         }
     ]
 };
 
 
-
-
-// bio formatted variables
-// var formattedName = HTMLheaderName.replace("%data%", bio.name);
-// var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-// var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-// var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-// var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-// var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-// var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-// var formattedPicURL = HTMLbioPic.replace("%data%", bio.biopic);
-// var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-
-
-// bio jQuery display
-// $("#topContacts").append(formattedMobile);
-// $("#topContacts").append(formattedEmail);
-// $("#topContacts").append(formattedTwitter);
-// $("#topContacts").append(formattedGithub);
-// $("#topContacts").append(formattedLocation);
-// $("#header").append(formattedPicURL);
-// $("#header").append(formattedWelcomeMsg);
-
-
-
+/* ---------------- bio display function ---------------- */
 bio.display = function() {
     function showBio() {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         $("#header").prepend(formattedRole);
+
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         $("#header").prepend(formattedName);
+
         var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
         $("#topContacts").append(formattedMobile);
+
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         $("#topContacts").append(formattedEmail);
+
         var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
         $("#topContacts").append(formattedTwitter);
+
         var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
         $("#topContacts").append(formattedGithub);
+
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
         $("#topContacts").append(formattedLocation);
+
         var formattedPicURL = HTMLbioPic.replace("%data%", bio.biopic);
         $("#header").append(formattedPicURL);
+
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
         $("#header").append(formattedWelcomeMsg);
     }
     showBio();
+    function showSkills() {
+        $("#header").append(HTMLskillsStart);
+        for (i = 0; i < bio.skills.length; i++) {
+            var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+            $("#skills").append(formattedSkill);
+        }
+    }
+    showSkills();
 };
 
 bio.display();
 
-// if (bio.skills.length > 0) {
-//
-//     $("#header").append(HTMLskillsStart);
-//
-//     var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-//     $("#skills").append(formattedSkill);
-//     formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-//     $("#skills").append(formattedSkill);
-//     formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-//     $("#skills").append(formattedSkill);
-//     formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-//     $("#skills").append(formattedSkill);
-// };
 
 /* ---------------- education display function ---------------- */
 education.schools.display = function () {
-/* ---------------- education function ---------------- */
+/* --- education function --- */
     function showSchool() {
         education.schools.forEach(function(school) {
-            console.log(school);
-            // console.log(job.title);
             $("#education").append(HTMLschoolStart);
+
             var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
             var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
             var formattedSchoolName = formattedSchoolName + formattedSchoolDegree;
             $(".education-entry:last").append(formattedSchoolName);
+
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
             $(".education-entry:last").append(formattedSchoolLocation);
+
             var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
             $(".education-entry:last").append(formattedSchoolDates);
+
             var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.major);
             $(".education-entry:last").append(formattedSchoolMajor);
         });
     }showSchool();
-    /* ---------------- onlineCourses function ---------------- */
+/* --- onlineCourses function --- */
     function showOnline() {
         education.onlineCourses.forEach(function(online) {
-            console.log(online);
             $(".education-entry:last").append(HTMLonlineClasses);
+
             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.school);
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.title);
             var formattedOnlineTitle = formattedOnlineTitle + formattedOnlineSchool;
             $(".education-entry:last").append(formattedOnlineTitle);
+
+            var formattedOnlineDates = HTMLonlineDates.replace("%data%", online.dates);
+            $(".education-entry:last").append(formattedOnlineDates);
+
             var formattedOnlineURL = HTMLonlineURL.replace("%data%", online.url);
             $(".education-entry:last").append(formattedOnlineURL);
         });
@@ -191,6 +180,7 @@ education.schools.display = function () {
 };
 
 education.schools.display();
+
 
 /* ---------------- work display function ---------------- */
 work.jobs.display = function () {
@@ -220,7 +210,6 @@ work.jobs.display();
 
 
 /* ---------------- projects display function ---------------- */
- // TODO: debug result of undefined in output
 projects.projects.display = function() {
     function showProject() {
         projects.projects.forEach(function(project) {
@@ -235,13 +224,18 @@ projects.projects.display = function() {
             var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
             $(".project-entry:last").append(formattedProjectDescription);
 
+            /* --- images display function --- */
             function showImage() {
-                projects.projects.forEach(function(image){
-                    var formattedProjectImage = HTMLprojectImage.replace("%data%", image.image);
-                    $(".project-entry:last").append(formattedProjectImage);
-                });
+                for (i = 0; i < project.images.length; i++) {
+                    console.log(project.images);
+                    for (j = 0; j < project.images[i][j].length; j++ ) {
+                        console.log(project.images[i]);
+                        var formattedProjectImage = HTMLprojectImage.replace("%data%", project.images[i]);
+                        $(".project-entry:last").append(formattedProjectImage);
+                    }
+                }
             }
-            showImage();
+        showImage();
         });
     }
     showProject();
@@ -249,5 +243,5 @@ projects.projects.display = function() {
 
 projects.projects.display();
 
-
+ // TODO: add map functionality to site
 // $("mapDiv").append(googleMap);
