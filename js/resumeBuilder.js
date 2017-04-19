@@ -227,9 +227,9 @@ projects.projects.display = function() {
             /* --- images display function --- */
             function showImage() {
                 for (i = 0; i < project.images.length; i++) {
-                    console.log(project.images);
+                    // console.log(project.images);
                     for (j = 0; j < project.images[i][j].length; j++ ) {
-                        console.log(project.images[i]);
+                        // console.log(project.images[i]);
                         var formattedProjectImage = HTMLprojectImage.replace("%data%", project.images[i]);
                         $(".project-entry:last").append(formattedProjectImage);
                     }
@@ -244,4 +244,4 @@ projects.projects.display = function() {
 projects.projects.display();
 
  // TODO: add map functionality to site
-// $("mapDiv").append(googleMap);
+$("#mapDiv").append(googleMap);
