@@ -13,21 +13,21 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLheaderRole = '<span id="headerRole">%data%</span><hr>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="contact-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><span class=" fa fa-mobile fa-lg orange-text"></span><span class="contact-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><span class="fa fa-envelope-o fa-lg orange-text"></span><span class="contact-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="fa fa-twitter fa-lg orange-text"></span><span class="contact-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="fa fa-github fa-lg orange-text"></span><span class="contact-text">%data%</span></li>';
+var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="contact-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item"><span class="fa fa-map-marker fa-lg orange-text"></span><span class="contact-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-row"></ul>';
+var HTMLskills = '<li class="flex-item"><span class="contact-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
@@ -57,6 +57,14 @@ var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
+
+// var HTMLFooterContactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="contact-text">%data%</span></li>';
+var HTMLFooterMobile = '<li class="flex-item"><span class=" fa fa-mobile fa-lg orange-text"></span><span class="white-contact-text">%data%</span></li>';
+var HTMLFooterEmail = '<li class="flex-item"><span class="fa fa-envelope-o fa-lg orange-text"></span><span class="white-contact-text">%data%</span></li>';
+var HTMLFooterTwitter = '<li class="flex-item"><span class="fa fa-twitter fa-lg orange-text"></span><span class="white-contact-text">%data%</span></li>';
+var HTMLFooterGithub = '<li class="flex-item"><span class="fa fa-github fa-lg orange-text"></span><span class="white-contact-text">%data%</span></li>';
+var HTMLFooterBlog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-contact-text">%data%</span></li>';
+var HTMLFooterLocation = '<li class="flex-item"><span class="fa fa-map-marker fa-lg orange-text"></span><span class="white-contact-text">%data%</span></li>';
 
 
 /*
