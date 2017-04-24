@@ -9,9 +9,9 @@ var bio = {
         "twitter": "twitter.com/greg_radcliffe",
         "location": "Portland, OR"
     },
-    "welcomeMessage": "I am an experienced creative professional presently focused on UI design and front-end Web development. I am passionate about the process of working with stakeholders and teammates to build great solutions to the challenges presented to me. I work hard to exceed my clients' expectations by providing insights that inspire them and help to define and fulfill their vision.",
+    "welcomeMessage": "I am a versatile and experienced creative professional presently focused on UI design and front-end Web development. I am passionate about the process of working with stakeholders and teammates to build great solutions to the challenges presented to me. I work hard to exceed my clients' expectations by providing insights that inspire them and help to define and fulfill their vision.",
     "skills": [
-        "HTML,", "CSS,", "Javascript,", "jQuery,", "Bootstrap,", "PhotoShop,", "Illustrator,", "Sketch,", "WordPress,", "Typography,", "UI Design,", "Responsive Design,",  "Information Architecture"
+        "HTML,", "CSS,", "Javascript,", "jQuery,", "Bootstrap,", "PhotoShop,", "Illustrator,", "Sketch,", "WordPress,", "Typography,", "UI Design,", "Responsive Design,",  "Information Architecture,", "Wireframing,", "Typography,", "Prototyping"
     ],
     "biopic": "images/headshot_gr.jpg"
 };
@@ -53,46 +53,46 @@ var education = {
 /* ---------------- work object ---------------- */
 var work = {
     "jobs": [{
-        "title": "Principal",
         "employer": "Creative Hubbub",
+        "title": "Principal",
+        "location": "Seattle, WA",
         "dates": "2000 - Present",
-        "location": "Seattle, WA",
-        "description": "Performing effectively as a versatile, problem-solving, independent contractor in roles including: creative professional, UX/UI designer, front-end developer, Web producer and project manager. Collaborating with team members and engaging directly with stakeholders on a range of B2B and B2C on a variety of projects for print, mobile and Web."
+        "description": "Performing effectively as a versatile, problem-solving, independent contractor in roles including creative professional, UX/UI designer, front-end developer, Web producer and project manager. Collaborating with team members and engaging directly with stakeholders on a variety of B2B and B2C projects for print, mobile and Web."
     }, {
-        "title": "Web Producer",
         "employer": "Rory Martin, Inc.",
-        "dates": "2014 - 2016",
+        "title": "Web Producer",
         "location": "Seattle, WA",
+        "dates": "2014 - 2016",
         "description": "Collaborated with stakeholders and influenced the web design, information architecture, and content. Provided UX/UI direction, wireframes, and requirements documents to design and development teams. Performed front-end coding, design, and content edits. Executed quality assurance and directed development on revisions."
     }, {
-        "title": "UI Designer",
         "employer": "WildTangent",
-        "dates": "2013 - 2016",
+        "title": "UI Designer",
         "location": "Redmond, WA",
+        "dates": "2013 - 2016",
         "description": "Leveraged and applied UX design principles and insights to create online micro-sites and rich media advertising units while working around the strict or ambiguous branding guidelines of high-profile brands."
     }, {
-        "title": "Senior Production Designer",
         "employer": "Hornall Anderson Design Works",
-        "dates": "2013",
+        "title": "Senior Production Designer",
         "location": "Seattle, WA",
+        "dates": "2013",
         "description": "Proactively pushed critical projects for nationally recognized brands onto completion by extending design and performing intuitive and detail-oriented production design."
     }, {
-        "title": "UI Designer",
         "employer": "Discovery Bay Games",
-        "dates": "2009 - 2013",
+        "title": "UI Designer",
         "location": "Seattle, WA",
+        "dates": "2009 - 2013",
         "description": "Directed and created UI designs under the often ambiguous constraints of licensor brand guidelines, human interface guidelines for iOS and internal business requirements. Created wireframes and rapid prototypes to validate the effectiveness of designs by participating in the evaluation of data collected during usability testing."
     }, {
-        "title": "Production Design Manager",
         "employer": "Hasbro",
-        "dates": "2008 - 2009",
+        "title": "Production Design Manager",
         "location": "Seattle, WA",
+        "dates": "2008 - 2009",
         "description": "Responsible for running all aspects of the production design department while working closely with cross-functional teams producing game and toy packaging, components and marketing materials intended for domestic and over-seas printing and fabrication. Directed a team of contractors and managed the design and incorporation of the extensive Cranium product line into compliance with Hasbro branding, legal requirements and safety standards."
     }, {
-        "title": "Senior Production Designer",
         "employer": "Cranium",
-        "dates": "2005 - 2008",
+        "title": "Senior Production Designer",
         "location": "Seattle, WA",
+        "dates": "2005 - 2008",
         "description": "Provided design and production for game and toy packaging, components, collateral and trade show graphics. Collaborated on a team of producers, editors and art directors tasked with localizing the existing domestic line of Cranium products into twelve different languages for international markets."
     }]
 };
