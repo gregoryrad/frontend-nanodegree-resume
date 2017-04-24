@@ -1,6 +1,6 @@
 /* ---------------- bio object ---------------- */
 var bio = {
-    "name": "Gregory Radcliffe",
+    "name": "Gregory Radcliffe - ",
     "role": "Front-End Web Developer",
     "contacts": {
         "mobile": "(206)920-8376",
@@ -9,9 +9,9 @@ var bio = {
         "twitter": "twitter.com/greg_radcliffe",
         "location": "Portland, OR"
     },
-    "welcomeMessage": "I am an experienced creative professional currently focused on UI design and front-end Web development. I love the process of working with clients, stakeholders and teammates to build great solutions to challenges.",
+    "welcomeMessage": "I am an experienced creative professional presently focused on UI design and front-end Web development. I am passionate about the process of working with stakeholders and teammates to build great solutions to the challenges presented to me. I work hard to exceed my clients' expectations by providing insights that inspire them and help to define and fulfill their vision.",
     "skills": [
-        "PhotoShop,", "Illustrator, ", "HTML, ", "CSS, ", "Responsive Design, ", "Sketch, ", "WordPress"
+        "HTML,", "CSS,", "Javascript,", "jQuery,", "Bootstrap,", "PhotoShop,", "Illustrator,", "Sketch,", "WordPress,", "Typography,", "UI Design,", "Responsive Design,",  "Information Architecture"
     ],
     "biopic": "images/headshot_gr.jpg"
 };
@@ -31,6 +31,21 @@ var education = {
         "school": "Udacity",
         "dates": "2017",
         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+    }, {
+        "title": "Sketch Essential Training: The Basics",
+        "school": "Lynda.com",
+        "dates": "2017",
+        "url": "https://www.lynda.com/Sketch-tutorials/Learn-Sketch-Basics/450912-2.html"
+    }, {
+        "title": "HTML5: Structure, Syntax, and Semantics",
+        "school": "Lynda.com",
+        "dates": "2014",
+        "url": "https://www.lynda.com/HTML-tutorials/HTML5-Structure-Syntax-Semantics/182177-2.html"
+    }, {
+        "title": "HTML5 & CSS3 Fundamentals",
+        "school": "Microsoft Virtual Academy",
+        "dates": "2014",
+        "url": "https://mva.microsoft.com/en-US/training-courses/html-5-css3-fundamentals-development-for-absolute-beginners-14207"
     }]
 };
 
@@ -42,43 +57,43 @@ var work = {
         "employer": "Creative Hubbub",
         "dates": "2000 - Present",
         "location": "Seattle, WA",
-        "description": "Proin risus odio, aliquam eu metus vitae, sodales vehicula ligula. Sed ac odio tellus. Cras justo massa, feugiat vitae est in, pellentesque convallis arcu. Morbi facilisis interdum mauris. Cras at dolor laoreet purus ultricies euismod vel a elit. Suspendisse varius, metus sit amet luctus porttitor, diam nibh porttitor tortor, non cursus mauris libero lacinia ex."
+        "description": "Performing effectively as a versatile, problem-solving, independent contractor in roles including: creative professional, UX/UI designer, front-end developer, Web producer and project manager. Collaborating with team members and engaging directly with stakeholders on a range of B2B and B2C on a variety of projects for print, mobile and Web."
     }, {
         "title": "Web Producer",
         "employer": "Rory Martin, Inc.",
         "dates": "2014 - 2016",
         "location": "Seattle, WA",
-        "description": "Donec non nibh ullamcorper, faucibus orci quis, pharetra urna. Sed imperdiet turpis gravida quam vestibulum scelerisque. Nam rhoncus nulla vel sem rutrum, ut porttitor justo tempus. Integer et arcu id risus commodo fringilla"
+        "description": "Collaborated with stakeholders and influenced the web design, information architecture, and content. Provided UX/UI direction, wireframes, and requirements documents to design and development teams. Performed front-end coding, design, and content edits. Executed quality assurance and directed development on revisions."
     }, {
         "title": "UI Designer",
         "employer": "WildTangent",
         "dates": "2013 - 2016",
         "location": "Redmond, WA",
-        "description": "Sed cursus venenatis lacus, quis tempor sapien placerat sed. Nunc cursus ipsum quis rutrum malesuada. Sed eget turpis eu metus tincidunt sagittis. Nullam porta est et ligula cursus rhoncus. Vivamus erat orci, molestie a tincidunt eget, dapibus id leo."
+        "description": "Leveraged and applied UX design principles and insights to create online micro-sites and rich media advertising units while working around the strict or ambiguous branding guidelines of high-profile brands."
     }, {
         "title": "Senior Production Designer",
         "employer": "Hornall Anderson Design Works",
         "dates": "2013",
         "location": "Seattle, WA",
-        "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent tincidunt elit eu lorem venenatis auctor id non nisi."
+        "description": "Proactively pushed critical projects for nationally recognized brands onto completion by extending design and performing intuitive and detail-oriented production design."
     }, {
         "title": "UI Designer",
         "employer": "Discovery Bay Games",
         "dates": "2009 - 2013",
         "location": "Seattle, WA",
-        "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut porta tincidunt lorem, vel sollicitudin augue lacinia ut. Sed in libero ac ligula pulvinar euismod et vel nibh. Fusce cursus rutrum ante, id fermentum neque porttitor at."
+        "description": "Directed and created UI designs under the often ambiguous constraints of licensor brand guidelines, human interface guidelines for iOS and internal business requirements. Created wireframes and rapid prototypes to validate the effectiveness of designs by participating in the evaluation of data collected during usability testing."
     }, {
         "title": "Production Design Manager",
         "employer": "Hasbro",
         "dates": "2008 - 2009",
         "location": "Seattle, WA",
-        "description": "Ut quis diam mauris. Integer et tempus odio. Aliquam erat volutpat. Phasellus ullamcorper vitae sem non mollis. Maecenas et fermentum orci. Pellentesque augue erat, euismod sit amet lacus at, interdum ornare lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+        "description": "Responsible for running all aspects of the production design department while working closely with cross-functional teams producing game and toy packaging, components and marketing materials intended for domestic and over-seas printing and fabrication. Directed a team of contractors and managed the design and incorporation of the extensive Cranium product line into compliance with Hasbro branding, legal requirements and safety standards."
     }, {
         "title": "Senior Production Designer",
         "employer": "Cranium",
         "dates": "2005 - 2008",
         "location": "Seattle, WA",
-        "description": "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed mollis libero ex. Cras at semper metus. Nunc commodo ex ex, vitae consectetur lectus faucibus a."
+        "description": "Provided design and production for game and toy packaging, components, collateral and trade show graphics. Collaborated on a team of producers, editors and art directors tasked with localizing the existing domestic line of Cranium products into twelve different languages for international markets."
     }]
 };
 
@@ -86,22 +101,21 @@ var work = {
 /* ---------------- projects object ---------------- */
 var projects = {
     "projects": [{
-        "title": "Suspendisse vitae",
+        "title": "H&R Irrigation Website",
         "dates": "2017",
-        "description": "Pellentesque molestie pellentesque neque. Morbi cursus odio ante, eget suscipit metus auctor vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "description": "Customized WordPress website for a local irrigation and landscaping company",
         "images": [
-            "images/fpo-1.jpg",
-            "images/fpo-2.jpg",
-            "images/fpo-6.png"
+            "images/handr-home.jpg",
+            "images/handr-services.jpg",
+            "images/handr-contact.jpg"
         ]
     }, {
-        "title": "Donec diam",
-        "dates": "2016",
-        "description": "Morbi in ipsum non velit ornare tristique. Maecenas vel lacus id turpis pharetra hendrerit. Maecenas ipsum erat, cursus a mollis a, rutrum sit amet lacus.",
+        "title": "Edmonds Comedy Night",
+        "dates": "2016-2017",
+        "description": "Promotional website built using HTML5 and CSS3 for an annual comedy fundraising event supporting local schools",
         "images": [
-            "images/fpo-3.png",
-            "images/fpo-4.png",
-            "images/fpo-5.png"
+            "images/ecn-home.jpg",
+            "images/ecn-about.jpg"
         ]
     }]
 };
@@ -177,9 +191,8 @@ education.schools.display = function() {
     showSchool();
     /* --- onlineCourses function --- */
     function showOnline() {
+        $(".education-entry:last").append(HTMLonlineClasses);
         education.onlineCourses.forEach(function(online) {
-            $(".education-entry:last").append(HTMLonlineClasses);
-
             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.school);
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.title);
             var formattedOnlineTitle = formattedOnlineTitle + formattedOnlineSchool;
