@@ -9,11 +9,54 @@ var bio = {
         "twitter": "twitter.com/greg_radcliffe",
         "location": "Portland, OR"
     },
-    "welcomeMessage": "I am a versatile and experienced creative professional presently focused on UI design and front-end Web development. I am passionate about the process of working with stakeholders and teammates to build great solutions to the challenges presented to me. I work hard to exceed my clients' expectations by providing insights that inspire them and help to define and fulfill their vision.",
+    "welcomeMessage": "I am an experienced and versatile creative professional presently focused on UI design and front-end Web development. I am passionate about the process of working with my teammates and other stakeholders to build great solutions to the challenges presented. I work hard to exceed my clients' expectations by providing insights that inspire them and thoughtful solutions to help them define and fulfill their vision.",
     "skills": [
         "HTML,", "CSS,", "Javascript,", "jQuery,", "Bootstrap,", "PhotoShop,", "Illustrator,", "Sketch,", "WordPress,", "Typography,", "UI Design,", "Responsive Design,",  "Information Architecture,", "Wireframing,", "Typography,", "Prototyping"
     ],
     "biopic": "images/headshot_gr.jpg"
+};
+
+
+/* ---------------- bio display function ---------------- */
+bio.display = function() {
+    function showBio() {
+        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+        $("#header").prepend(formattedRole);
+
+        var formattedName = HTMLheaderName.replace("%data%", bio.name);
+        $("#header").prepend(formattedName);
+
+        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+        $("#topContacts").append(formattedMobile);
+
+        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+        $("#topContacts").append(formattedEmail);
+
+        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+        $("#topContacts").append(formattedTwitter);
+
+        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+        $("#topContacts").append(formattedGithub);
+
+        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+        $("#topContacts").append(formattedLocation);
+
+        var formattedPicURL = HTMLbioPic.replace("%data%", bio.biopic);
+        $("#header").append(formattedPicURL);
+
+        var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+        $("#header").append(formattedWelcomeMsg);
+    }
+    showBio();
+
+    function showSkills() {
+        $("#header").append(HTMLskillsStart);
+        for (i = 0; i < bio.skills.length; i++) {
+            var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+            $("#skills").append(formattedSkill);
+        }
+    }
+    showSkills();
 };
 
 
@@ -23,8 +66,9 @@ var education = {
         "name": "Edmonds Community College",
         "location": "Lynnwood, WA",
         "degree": "Certificate in Web App Development",
-        "major": "CompSci",
-        "dates": "Sep. 2014 - Jun. 2016"
+        "majors": "CIS",
+        "dates": "Sep. 2014 - Jun. 2016",
+        "url": "http://catalog.edcc.edu/preview_program.php?catoid=48&poid=9406&returnto=13776"
     }],
     "onlineCourses": [{
         "title": "Front-End Web Developer Nanodegree",
@@ -47,6 +91,49 @@ var education = {
         "dates": "2014",
         "url": "https://mva.microsoft.com/en-US/training-courses/html-5-css3-fundamentals-development-for-absolute-beginners-14207"
     }]
+};
+
+
+/* ---------------- education display function ---------------- */
+education.display = function() {
+    /* --- education function --- */
+    function showSchool() {
+        education.schools.forEach(function(school) {
+            $("#education").append(HTMLschoolStart);
+            var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+            // formattedSchoolName = HTMLschoolName.replace("#", school.url);
+            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
+            var formattedSchoolName = formattedSchoolName + formattedSchoolDegree;
+            $(".education-entry:last").append(formattedSchoolName);
+
+            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
+            $(".education-entry:last").append(formattedSchoolLocation);
+
+            var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
+            $(".education-entry:last").append(formattedSchoolDates);
+
+            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.majors);
+            $(".education-entry:last").append(formattedSchoolMajor);
+        });
+    }
+    showSchool();
+    /* --- onlineCourses function --- */
+    function showOnline() {
+        $(".education-entry:last").append(HTMLonlineClasses);
+        education.onlineCourses.forEach(function(online) {
+            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.school);
+            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.title);
+            var formattedOnlineTitle = formattedOnlineTitle + formattedOnlineSchool;
+            $(".education-entry:last").append(formattedOnlineTitle);
+
+            var formattedOnlineDates = HTMLonlineDates.replace("%data%", online.dates);
+            $(".education-entry:last").append(formattedOnlineDates);
+
+            var formattedOnlineURL = HTMLonlineURL.replace("%data%", online.url);
+            $(".education-entry:last").append(formattedOnlineURL);
+        });
+    }
+    showOnline();
 };
 
 
@@ -98,121 +185,8 @@ var work = {
 };
 
 
-/* ---------------- projects object ---------------- */
-var projects = {
-    "projects": [{
-        "title": "H&R Irrigation Website",
-        "dates": "2017",
-        "description": "Customized WordPress website for a local irrigation and landscaping company",
-        "images": [
-            "images/handr-home.jpg",
-            "images/handr-services.jpg",
-            "images/handr-contact.jpg"
-        ]
-    }, {
-        "title": "Edmonds Comedy Night",
-        "dates": "2016-2017",
-        "description": "Promotional website built using HTML5 and CSS3 for an annual comedy fundraising event supporting local schools",
-        "images": [
-            "images/ecn-home.jpg",
-            "images/ecn-about.jpg"
-        ]
-    }]
-};
-
-
-/* ---------------- bio display function ---------------- */
-bio.display = function() {
-    function showBio() {
-        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-        $("#header").prepend(formattedRole);
-
-        var formattedName = HTMLheaderName.replace("%data%", bio.name);
-        $("#header").prepend(formattedName);
-
-        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-        $("#topContacts").append(formattedMobile);
-
-        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-        $("#topContacts").append(formattedEmail);
-
-        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-        $("#topContacts").append(formattedTwitter);
-
-        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-        $("#topContacts").append(formattedGithub);
-
-        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-        $("#topContacts").append(formattedLocation);
-
-        var formattedPicURL = HTMLbioPic.replace("%data%", bio.biopic);
-        $("#header").append(formattedPicURL);
-
-        var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-        $("#header").append(formattedWelcomeMsg);
-    }
-    showBio();
-
-    function showSkills() {
-        $("#header").append(HTMLskillsStart);
-        for (i = 0; i < bio.skills.length; i++) {
-            var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-            $("#skills").append(formattedSkill);
-        }
-    }
-    showSkills();
-};
-
-bio.display();
-
-
-/* ---------------- education display function ---------------- */
-education.schools.display = function() {
-    /* --- education function --- */
-    function showSchool() {
-        education.schools.forEach(function(school) {
-            $("#education").append(HTMLschoolStart);
-
-            var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
-            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
-            var formattedSchoolName = formattedSchoolName + formattedSchoolDegree;
-            $(".education-entry:last").append(formattedSchoolName);
-
-            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
-            $(".education-entry:last").append(formattedSchoolLocation);
-
-            var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
-            $(".education-entry:last").append(formattedSchoolDates);
-
-            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.major);
-            $(".education-entry:last").append(formattedSchoolMajor);
-        });
-    }
-    showSchool();
-    /* --- onlineCourses function --- */
-    function showOnline() {
-        $(".education-entry:last").append(HTMLonlineClasses);
-        education.onlineCourses.forEach(function(online) {
-            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.school);
-            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.title);
-            var formattedOnlineTitle = formattedOnlineTitle + formattedOnlineSchool;
-            $(".education-entry:last").append(formattedOnlineTitle);
-
-            var formattedOnlineDates = HTMLonlineDates.replace("%data%", online.dates);
-            $(".education-entry:last").append(formattedOnlineDates);
-
-            var formattedOnlineURL = HTMLonlineURL.replace("%data%", online.url);
-            $(".education-entry:last").append(formattedOnlineURL);
-        });
-    }
-    showOnline();
-};
-
-education.schools.display();
-
-
 /* ---------------- work display function ---------------- */
-work.jobs.display = function() {
+work.display = function() {
     function showWork() {
         work.jobs.forEach(function(job) {
             // console.log(job);
@@ -236,11 +210,32 @@ work.jobs.display = function() {
     showWork();
 };
 
-work.jobs.display();
+
+/* ---------------- projects object ---------------- */
+var projects = {
+    "projects": [{
+        "title": "H&R Irrigation Website",
+        "dates": "2017",
+        "description": "Customized WordPress website for a local irrigation and landscaping company",
+        "images": [
+            "images/handr-home.jpg",
+            "images/handr-services.jpg",
+            "images/handr-contact.jpg"
+        ]
+    }, {
+        "title": "Edmonds Comedy Night",
+        "dates": "2016-2017",
+        "description": "Promotional website built using HTML5 and CSS3 for an annual comedy fundraising event supporting local schools",
+        "images": [
+            "images/ecn-home.jpg",
+            "images/ecn-about.jpg"
+        ]
+    }],
+};
 
 
 /* ---------------- projects display function ---------------- */
-projects.projects.display = function() {
+projects.display = function() {
     function showProject() {
         projects.projects.forEach(function(project) {
             $("#projects").append(HTMLprojectStart);
@@ -271,7 +266,14 @@ projects.projects.display = function() {
     showProject();
 };
 
-projects.projects.display();
+
+bio.display();
+
+education.display();
+
+work.display();
+
+projects.display();
 
 /* ---------------- footer contacts display function ---------------- */
 // bio.display = function() {
