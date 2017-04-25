@@ -48,7 +48,7 @@ bio.display = function() {
         $("#header").append(formattedWelcomeMsg);
     }
     showBio();
-
+    /* --- showSkills function --- */
     function showSkills() {
         $("#header").append(HTMLskillsStart);
         for (i = 0; i < bio.skills.length; i++) {
@@ -57,6 +57,22 @@ bio.display = function() {
         }
     }
     showSkills();
+
+/* ---------------- footer contacts display function ---------------- */
+    function showFooterContacts() {
+        var formattedFooterMobile = HTMLFooterMobile.replace("%data%", bio.contacts.mobile);
+        $("#footerContacts").append(formattedFooterMobile);
+
+        var formattedFooterEmail = HTMLFooterEmail.replace("%data%", bio.contacts.email);
+        $("#footerContacts").append(formattedFooterEmail);
+
+        var formattedFooterTwitter = HTMLFooterTwitter.replace("%data%", bio.contacts.twitter);
+        $("#footerContacts").append(formattedFooterTwitter);
+
+        var formattedFooterGithub = HTMLFooterGithub.replace("%data%", bio.contacts.github);
+        $("#footerContacts").append(formattedFooterGithub);
+    }
+    showFooterContacts();
 };
 
 
@@ -101,9 +117,9 @@ education.display = function() {
         education.schools.forEach(function(school) {
             $("#education").append(HTMLschoolStart);
             var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
-            // formattedSchoolName = HTMLschoolName.replace("#", school.url);
             var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
-            var formattedSchoolName = formattedSchoolName + formattedSchoolDegree;
+            var formattedSchoolURL = formattedSchoolName.replace("#", school.url);
+            formattedSchoolName = formattedSchoolURL + formattedSchoolDegree;
             $(".education-entry:last").append(formattedSchoolName);
 
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
@@ -121,6 +137,7 @@ education.display = function() {
     function showOnline() {
         $(".education-entry:last").append(HTMLonlineClasses);
         education.onlineCourses.forEach(function(online) {
+            $("#education").append(HTMLschoolStart);
             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", online.school);
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", online.title);
             var formattedOnlineTitle = formattedOnlineTitle + formattedOnlineSchool;
@@ -274,24 +291,6 @@ education.display();
 work.display();
 
 projects.display();
-
-/* ---------------- footer contacts display function ---------------- */
-// bio.display = function() {
-    function showFooterContacts() {
-        var formattedFooterMobile = HTMLFooterMobile.replace("%data%", bio.contacts.mobile);
-        $("#footerContacts").append(formattedFooterMobile);
-
-        var formattedFooterEmail = HTMLFooterEmail.replace("%data%", bio.contacts.email);
-        $("#footerContacts").append(formattedFooterEmail);
-
-        var formattedFooterTwitter = HTMLFooterTwitter.replace("%data%", bio.contacts.twitter);
-        $("#footerContacts").append(formattedFooterTwitter);
-
-        var formattedFooterGithub = HTMLFooterGithub.replace("%data%", bio.contacts.github);
-        $("#footerContacts").append(formattedFooterGithub);
-    }
-    showFooterContacts();
-
 
 /* ---------------- Google Maps Section ---------------- */
 $("#mapDiv").append(googleMap);
